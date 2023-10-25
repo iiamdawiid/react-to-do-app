@@ -2,6 +2,13 @@ body {
     background-color: rgb(107, 107, 107);
 }
 
+.home-text {
+    margin-top: 150px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
 #to-do-form {
     display: flex;
     flex-direction: column;
@@ -9,10 +16,57 @@ body {
     margin: 0 auto;
 }
 
+#to-do-form input {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 37px;
+}
+
+#to-do-form button {
+    border: 1px solid black;
+}
+
 .taskCard {
     margin: 10px;
+    box-shadow: 10px 10px 5px #2f2f2f;
 }
 
 .cardBtn {
     margin: 5px;
+}
+
+.nav-home {
+    color: white;
+}
+
+.nav-create-task {
+    color: white;
+}
+
+.nav-comp-task {
+    color: white;
+}
+
+.nav:hover {
+    color: dodgerblue;
+}
+
+@keyframes spinAndChangeColor {
+  0% {
+    transform: rotate(0deg);
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: yellow;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: red;
+  }
 }

@@ -7,7 +7,6 @@ export default class Home extends Component {
 
     render() {
     return (
-        <div style={{'textAlign': 'center'}}>Boring Home Page</div>
-    )
-    }
+        <div className='home-text' style={{'textAlign': 'center', animation: 'spinAndChangeColor 4s linear infinite'}}>Boring Home Page</div>
+    )}
 }

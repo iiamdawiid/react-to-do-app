@@ -3,12 +3,14 @@ import Navbar from './Navbar';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import CreateTask from './CreateTask';
+import CompletedTasks from './CompletedTasks';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      arrayOfTasks: []
+      arrayOfTasks: [],
+      completedTasks: []
     }
   }
 
@@ -32,6 +34,21 @@ export default class App extends Component {
     e.target.description.value = '';
   }
 
+  storeCompletedTask = (index) => {
+    const tasks = [...this.state.arrayOfTasks];
+    const completedTasks = [...this.state.completedTasks];
+
+    const completedTask = tasks[index];
+    tasks.splice(index, 1);
+
+    completedTasks.push(completedTask);
+
+    this.setState({
+      arrayOfTasks: tasks,
+      completedTasks: completedTasks
+    })
+  }
+
   deleteTaskInfo = (index) => {
     const tasks = [...this.state.arrayOfTasks];
 
@@ -47,7 +64,9 @@ export default class App extends Component {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/create_task' element={<CreateTask arrayOfTasks={this.state.arrayOfTasks} storeTaskInfo={this.storeTaskInfo} deleteTaskInfo={this.deleteTaskInfo} />} />
+          <Route path='/create_task' element={<CreateTask arrayOfTasks={this.state.arrayOfTasks} storeTaskInfo={this.storeTaskInfo}
+            deleteTaskInfo={this.deleteTaskInfo} storeCompletedTask={this.storeCompletedTask}/>} />
+          <Route path='/completed_tasks' element={<CompletedTasks completedTasks={this.state.completedTasks}/>} />
         </Routes>
         
         
