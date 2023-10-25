@@ -1,0 +1,18 @@
+body { 
+    background-color: rgb(107, 107, 107);
+}
+
+#to-do-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.taskCard {
+    margin: 10px;
+}
+
+.cardBtn {
+    margin: 5px;
+}
