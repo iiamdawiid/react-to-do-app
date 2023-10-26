@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import CreateTask from './CreateTask';
 import CompletedTasks from './CompletedTasks';
+import Signup from './Signup';
+import Login from './Login';
 
 export default class App extends Component {
   constructor() {
@@ -57,16 +59,24 @@ export default class App extends Component {
     this.setState({arrayOfTasks: tasks})
   }
 
+  logOut = (e) => {
+    e.preventDefault();
+    localStorage.removeItem(`${localStorage.getItem('username')} token`);
+    window.location.reload();
+  }
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logOut={this.logOut}/>
 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/create_task' element={<CreateTask arrayOfTasks={this.state.arrayOfTasks} storeTaskInfo={this.storeTaskInfo}
             deleteTaskInfo={this.deleteTaskInfo} storeCompletedTask={this.storeCompletedTask}/>} />
           <Route path='/completed_tasks' element={<CompletedTasks completedTasks={this.state.completedTasks}/>} />
+          <Route path='/register' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
         
         

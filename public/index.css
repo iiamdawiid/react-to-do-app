@@ -70,3 +70,13 @@ body {
     color: red;
   }
 }
+
+#login-success {
+  color: white;
+  font-size: 20px;
+  background-color: green;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

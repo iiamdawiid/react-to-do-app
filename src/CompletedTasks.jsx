@@ -4,7 +4,7 @@ export default class CompletedTasks extends Component {
   render() {
     return (
     <div>
-        <h2 className='mt-3' style={{'textAlign': 'center', color: '#09d60f', textShadow: '2px 2px 4px #000000'}}>Completed Tasks</h2>
+        <h2 className='mt-5' style={{'textAlign': 'center', color: '#09d60f', textShadow: '2px 2px 4px #000000'}}>Completed Tasks</h2>
         <ul>
             <div className='container'>
                 <div className="row justify-content-center">

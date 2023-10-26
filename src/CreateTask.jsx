@@ -13,7 +13,7 @@ export default class CreateTask extends Component {
         return (
             <div>
                 <form onSubmit={this.props.storeTaskInfo} id='to-do-form'>
-                    <h2 className='mt-3' style={{'textAlign': 'center', color: 'white', textShadow: '2px 2px 4px #000000'}}>Create Task</h2>
+                    <h2 className='mt-5' style={{'textAlign': 'center', color: 'white', textShadow: '2px 2px 4px #000000'}}>Create Task</h2>
                     <input className='mt-3' placeholder='Enter title' name='title' />
                     <input className='mt-3' placeholder='Enter description' name='description' />
                     <button className='mt-3 btn btn-success' type="submit">Submit</button>
